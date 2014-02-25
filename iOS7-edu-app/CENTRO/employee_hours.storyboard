@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="S1h-lu-qWL">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Employee Hours Per Activity View Controller-->
+        <scene sceneID="OaX-xi-s0H">
+            <objects>
+                <viewController id="S1h-lu-qWL" customClass="SSEmployeeHoursPerActivityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MG7-JM-pbG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ghS-I0-K95">
+                                <rect key="frame" x="20" y="18" width="280" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="HhK-t0-gBj">
+                                <rect key="frame" x="95" y="94" width="130" height="30"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y8j-kP-pvs">
+                                <rect key="frame" x="95" y="141" width="130" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="hne-D9-DWh">
+                                <rect key="frame" x="20" y="201" width="280" height="29"/>
+                                <segments>
+                                    <segment title="Day"/>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dJO-lL-Vys">
+                                <rect key="frame" x="200" y="261" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.70588235290000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="S1h-lu-qWL" eventType="touchUpInside" id="9wh-d3-TTn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sds-aF-HNi">
+                                <rect key="frame" x="40" y="261" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="S1h-lu-qWL" eventType="touchUpInside" id="ucg-69-agg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="amountTextField" destination="HhK-t0-gBj" id="Flu-da-PwZ"/>
+                        <outlet property="backButton" destination="sds-aF-HNi" id="jJn-vn-Lm8"/>
+                        <outlet property="frequencyLabel" destination="Y8j-kP-pvs" id="6mN-aJ-O1Q"/>
+                        <outlet property="frequencySegmentedControl" destination="hne-D9-DWh" id="1Iw-x4-6ta"/>
+                        <outlet property="nextButton" destination="dJO-lL-Vys" id="Uqa-EE-bbh"/>
+                        <outlet property="questionLabel" destination="ghS-I0-K95" id="2bC-p2-j1t"/>
+                        <segue destination="0wm-G9-sFc" kind="push" identifier="CompetencyAssessment" id="aZc-5v-4ma"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2z-43-PqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460" y="9133"/>
+        </scene>
+        <!--Employee Competency Per Activity View Controller-->
+        <scene sceneID="84e-Tl-bmh">
+            <objects>
+                <viewController id="0wm-G9-sFc" customClass="SSEmployeeCompetencyPerActivityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Dx-8d-wRE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CEQ-hg-vMw">
+                                <rect key="frame" x="20" y="22" width="280" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" id="q5g-aj-qit">
+                                <rect key="frame" x="20" y="87" width="280" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="E00-3Q-um8">
+                                <rect key="frame" x="20" y="152" width="280" height="29"/>
+                                <segments>
+                                    <segment title="Great"/>
+                                    <segment title="Good Enough"/>
+                                    <segment title="Need to Improve"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BC5-cS-AC5">
+                                <rect key="frame" x="200" y="260" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.70588235290000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="0wm-G9-sFc" eventType="touchUpInside" id="Y9M-La-wFQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WD6-Nh-5DE">
+                                <rect key="frame" x="40" y="260" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="0wm-G9-sFc" eventType="touchUpInside" id="AYz-g9-TO6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="GT9-os-nVk"/>
+                    <connections>
+                        <outlet property="activityLabel" destination="q5g-aj-qit" id="Uwj-85-Zjb"/>
+                        <outlet property="backButton" destination="WD6-Nh-5DE" id="tyq-cU-AIW"/>
+                        <outlet property="frequencySegmentedControl" destination="E00-3Q-um8" id="yGG-Gx-o5K"/>
+                        <outlet property="nextButton" destination="BC5-cS-AC5" id="6T7-TB-9de"/>
+                        <outlet property="questionLabel" destination="CEQ-hg-vMw" id="CdE-ih-e0n"/>
+                        <segue destination="Akc-2O-tFp" kind="push" identifier="CoreCompetencies" id="G3t-5u-2c4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BaU-Jf-tdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="9133"/>
+        </scene>
+        <!--Core Competencies View Controller-->
+        <scene sceneID="kwE-Fl-8x8">
+            <objects>
+                <viewController id="Akc-2O-tFp" customClass="SSCoreCompetenciesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8AV-sf-pnu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" id="Gtf-TV-27E">
+                                <rect key="frame" x="20" y="28" width="280" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="aB7-cE-gaz">
+                                <rect key="frame" x="20" y="106" width="280" height="100"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="w4c-sH-Abe">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Wgx-lL-cRk">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="Akc-2O-tFp" id="bEa-73-3vF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="coreCompetenciesTextView" destination="aB7-cE-gaz" id="zph-SO-7X6"/>
+                        <outlet property="doneButton" destination="Wgx-lL-cRk" id="4Dv-7F-66o"/>
+                        <outlet property="titleLabel" destination="Gtf-TV-27E" id="o8Y-wt-fTZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8HW-vm-xmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2434" y="9133"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

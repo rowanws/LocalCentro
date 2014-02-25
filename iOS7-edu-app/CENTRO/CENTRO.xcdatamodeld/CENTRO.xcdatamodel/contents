@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Activity" representedClassName="Activity" syncable="YES">
+        <attribute name="activityID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="completed" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="showCompletedScreen" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="turn" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="student" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="activities" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="BrandAttribute" representedClassName="BrandAttribute" syncable="YES">
+        <attribute name="brandValueCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brandValueID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="brandValueLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brandValuePropositionRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="brandValueRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="selectedAsBrandValueProposition" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selectedOverBrandValue" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="brandAttributes" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectedAsCategory" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="categories" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Company" representedClassName="Company" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencyEmployeeBenefits" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isOtherProfitAmountSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isProductsSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isServicesSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfEmployees" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="otherProfitAmount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="otherProfitFrequency" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="productsAndServicesEstimate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="productsQty" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="servicesQty" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalEmployeeBenefitsCosts" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="brandAttributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BrandAttribute" inverseName="company" inverseEntity="BrandAttribute" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Category" inverseName="company" inverseEntity="Category" syncable="YES"/>
+        <relationship name="companyAssets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CompanyAsset" inverseName="company" inverseEntity="CompanyAsset" syncable="YES"/>
+        <relationship name="companyCosts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CompanyCost" inverseName="company" inverseEntity="CompanyCost" syncable="YES"/>
+        <relationship name="companyDebts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CompanyDebt" inverseName="company" inverseEntity="CompanyDebt" syncable="YES"/>
+        <relationship name="competitorProfiles" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CompetitorProfile" inverseName="company" inverseEntity="CompetitorProfile" syncable="YES"/>
+        <relationship name="customerProfile" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="CustomerProfile" inverseName="company" inverseEntity="CustomerProfile" syncable="YES"/>
+        <relationship name="customerProfileSamples" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CustomerProfileSample" inverseName="company" inverseEntity="CustomerProfileSample" syncable="YES"/>
+        <relationship name="employeeEducations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EmployeeEducation" inverseName="company" inverseEntity="EmployeeEducation" syncable="YES"/>
+        <relationship name="employeeResponsibilities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EmployeeResponsibility" inverseName="company" inverseEntity="EmployeeResponsibility" syncable="YES"/>
+        <relationship name="employees" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Employee" inverseName="company" inverseEntity="Employee" syncable="YES"/>
+        <relationship name="industry" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Industry" inverseName="company" inverseEntity="Industry" syncable="YES"/>
+        <relationship name="mission" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Mission" inverseName="company" inverseEntity="Mission" syncable="YES"/>
+        <relationship name="nearbyCompetitor" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="NearbyCompetitor" inverseName="company" inverseEntity="NearbyCompetitor" syncable="YES"/>
+        <relationship name="operatingHours" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OperatingHour" inverseName="company" inverseEntity="OperatingHour" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="company" inverseEntity="Product" syncable="YES"/>
+        <relationship name="purposes" optional="YES" toMany="YES" minCount="1" maxCount="3" deletionRule="Cascade" destinationEntity="Purpose" inverseName="company" inverseEntity="Purpose" syncable="YES"/>
+        <relationship name="responsibilities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Responsibility" inverseName="company" inverseEntity="Responsibility" syncable="YES"/>
+        <relationship name="student" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="company" inverseEntity="Student" syncable="YES"/>
+        <relationship name="valuePropositions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ValueProposition" inverseName="company" inverseEntity="ValueProposition" syncable="YES"/>
+        <relationship name="vision" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Vision" inverseName="company" inverseEntity="Vision" syncable="YES"/>
+    </entity>
+    <entity name="CompanyAsset" representedClassName="CompanyAsset" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="companyAssetCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyAssetID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="companyAssetLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selectedAsAsset" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="companyAssets" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="CompanyCost" representedClassName="CompanyCost" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="companyCostCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyCostID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="companyCostLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequency" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="monthlyAmount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="selectedAsIncurredCost" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="companyCosts" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="CompanyDebt" representedClassName="CompanyDebt" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="companyDebtCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyDebtID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="companyDebtLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selectedAsDebt" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="companyDebts" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="CompetitorProfile" representedClassName="CompetitorProfile" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="competitorProfileID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="customerServiceRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencySellTargetAge" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencySellTargetEducation" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencySellTargetGenre" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencySellTargetIncome" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencySellTargetInterest" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencySellTargetOccupation" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="locationRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priceRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="qualityRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sellLongDrive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sellOnline" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sellShortDrive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sellWalkingDistance" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="speedRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="competitorProfiles" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="CustomerEducation" representedClassName="CustomerEducation" syncable="YES">
+        <attribute name="customerProfileID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="educationCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="educationID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="educationLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectedAsCustomerEducation" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="customerProfile" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="CustomerProfile" inverseName="educations" inverseEntity="CustomerProfile" syncable="YES"/>
+    </entity>
+    <entity name="CustomerInterest" representedClassName="CustomerInterest" syncable="YES">
+        <attribute name="customerProfileID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="interestCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interestID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="interestLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectedAsCustomerInterest" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="customerProfile" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="CustomerProfile" inverseName="interests" inverseEntity="CustomerProfile" syncable="YES"/>
+    </entity>
+    <entity name="CustomerOccupation" representedClassName="CustomerOccupation" syncable="YES">
+        <attribute name="customerProfileID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="occupationCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occupationID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="occupationLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectedAsCustomerOccupation" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="customerProfile" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="CustomerProfile" inverseName="occupations" inverseEntity="CustomerProfile" syncable="YES"/>
+    </entity>
+    <entity name="CustomerPriority" representedClassName="CustomerPriority" syncable="YES">
+        <attribute name="customerProfileID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="priorityCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priorityID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="priorityLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="customerProfile" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="CustomerProfile" inverseName="priorities" inverseEntity="CustomerProfile" syncable="YES"/>
+    </entity>
+    <entity name="CustomerProfile" representedClassName="CustomerProfile" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="customerProfileID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fromAge" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fromIncome" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isAgeSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isEducationSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isGenderSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isIncomeSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isInterestSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isLocationSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isOccupationSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="locationLongDrive" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locationOnline" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locationOther" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locationShortDrive" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locationWalk" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="menPercentage" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="toAge" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="toIncome" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="womenPercentage" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="customerProfile" inverseEntity="Company" syncable="YES"/>
+        <relationship name="educations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CustomerEducation" inverseName="customerProfile" inverseEntity="CustomerEducation" syncable="YES"/>
+        <relationship name="interests" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CustomerInterest" inverseName="customerProfile" inverseEntity="CustomerInterest" syncable="YES"/>
+        <relationship name="occupations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CustomerOccupation" inverseName="customerProfile" inverseEntity="CustomerOccupation" syncable="YES"/>
+        <relationship name="priorities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CustomerPriority" inverseName="customerProfile" inverseEntity="CustomerPriority" syncable="YES"/>
+    </entity>
+    <entity name="CustomerProfileSample" representedClassName="CustomerProfileSample" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="customerProfileSampleID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="educationLevel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="income" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="interest" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profession" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="customerProfileSamples" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Employee" representedClassName="Employee" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="earning" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="earningFrequency" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="employeeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="manager" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="myself" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="professionalExperience" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="selectedAsEmployee" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="weeksWork" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="employees" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="EmployeeEducation" representedClassName="EmployeeEducation" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="educationCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="educationID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="educationLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="employeeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="selectedAsEmployeeEducation" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="employeeEducations" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="EmployeeResponsibility" representedClassName="EmployeeResponsibility" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="employeeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="employeeResponsibilityID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="frequencyHoursNeeded" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hoursNeeded" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isMyResponsibility" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isOtherResponsibility" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="responsibilityID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="selectedAsResponsibility" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="employeeResponsibilities" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Industry" representedClassName="Industry" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="growth" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="growthRate" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="industryCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="industryID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="industrySegmentCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="marketAge" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="regulations" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="volatility" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="industry" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="IndustryAndSegment" representedClassName="IndustryAndSegment" syncable="YES">
+        <attribute name="industryAndSegmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="industryCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="industryLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSegment" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="segmentCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="segmentLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Mission" representedClassName="Mission" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mission" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="missionID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="mission" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="NearbyCompetitor" representedClassName="NearbyCompetitor" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="longDriveCompetitors" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nearbyCompetitorID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="onlineCompetitors" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="shortDriveCompetitors" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="walkingDistanceCompetitors" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="nearbyCompetitor" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="OperatingHour" representedClassName="OperatingHour" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dayOfWeekID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dayOfWeekUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="from" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="selectedAsWorkingDay" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="to" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="workingHourID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="operatingHours" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isPriceSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isProfitAmountSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="monthlyProfitAmount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="productID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="profitAmount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="profitFrequency" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="selectedAsItem" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selectedAsProfitableItem" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="products" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Purpose" representedClassName="Purpose" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purpose" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purposeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="purposes" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Responsibility" representedClassName="Responsibility" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="responsibilityDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="responsibilityID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="selectedAsResponsibility" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="responsibilities" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="dateOfBirth" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="preferredName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Activity" inverseName="student" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="assets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StudentAsset" inverseName="student" inverseEntity="StudentAsset" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="student" inverseEntity="Company" syncable="YES"/>
+        <relationship name="costs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StudentCost" inverseName="student" inverseEntity="StudentCost" syncable="YES"/>
+        <relationship name="debts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StudentDebt" inverseName="student" inverseEntity="StudentDebt" syncable="YES"/>
+        <relationship name="incomes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StudentIncome" inverseName="student" inverseEntity="StudentIncome" syncable="YES"/>
+        <relationship name="values" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Value" inverseName="student" inverseEntity="Value" syncable="YES"/>
+    </entity>
+    <entity name="StudentAsset" representedClassName="StudentAsset" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selectedAsAsset" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="studentAssetCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentAssetID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="studentAssetLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="student" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="assets" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="StudentCost" representedClassName="StudentCost" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="frequency" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="monthlyAmount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="selectedAsIncurredCost" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="studentCostCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentCostID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="studentCostLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="student" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="costs" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="StudentDebt" representedClassName="StudentDebt" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selectedAsDebt" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="studentDebtCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentDebtID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="studentDebtLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="student" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="debts" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="StudentIncome" representedClassName="StudentIncome" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="frequency" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isSure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="monthlyAmount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="selectedAsSourceOfIncome" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="studentIncomeCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentIncomeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="studentIncomeLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="student" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Student" inverseName="incomes" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Value" representedClassName="Value" syncable="YES">
+        <attribute name="companyRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="selectedAsCompanyValue" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selectedOver" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="valueCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valueID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="valueLiteralUS" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="student" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="values" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="ValueProposition" representedClassName="ValueProposition" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="competitorProfileID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="customerServiceRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isCompetitor" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="locationRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priceRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="qualityRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="speedRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="valuePropositionID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="valuePropositions" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Vision" representedClassName="Vision" syncable="YES">
+        <attribute name="companyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="vision" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="visionID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Company" inverseName="vision" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="106" positionY="-1098" width="128" height="165"/>
+        <element name="BrandAttribute" positionX="655" positionY="-423" width="128" height="178"/>
+        <element name="Category" positionX="1051" positionY="-801" width="128" height="118"/>
+        <element name="Company" positionX="477" positionY="-1017" width="146" height="568"/>
+        <element name="CompanyAsset" positionX="1069" positionY="-981" width="128" height="163"/>
+        <element name="CompanyCost" positionX="1033" positionY="-1444" width="128" height="193"/>
+        <element name="CompanyDebt" positionX="1170" positionY="-1044" width="128" height="163"/>
+        <element name="CompetitorProfile" positionX="907" positionY="-1062" width="128" height="328"/>
+        <element name="CustomerEducation" positionX="466" positionY="-1575" width="128" height="133"/>
+        <element name="CustomerInterest" positionX="63" positionY="-1377" width="128" height="133"/>
+        <element name="CustomerOccupation" positionX="529" positionY="-1386" width="128" height="133"/>
+        <element name="CustomerPriority" positionX="99" positionY="-1611" width="128" height="133"/>
+        <element name="CustomerProfile" positionX="288" positionY="-1485" width="128" height="420"/>
+        <element name="CustomerProfileSample" positionX="691" positionY="-1413" width="128" height="195"/>
+        <element name="Employee" positionX="853" positionY="-1575" width="128" height="210"/>
+        <element name="EmployeeEducation" positionX="1033" positionY="-1611" width="128" height="150"/>
+        <element name="EmployeeResponsibility" positionX="621" positionY="-1710" width="128" height="208"/>
+        <element name="Industry" positionX="655" positionY="-774" width="128" height="195"/>
+        <element name="IndustryAndSegment" positionX="844" positionY="-1330" width="128" height="133"/>
+        <element name="Mission" positionX="727" positionY="-1179" width="128" height="103"/>
+        <element name="NearbyCompetitor" positionX="504" positionY="-1242" width="128" height="148"/>
+        <element name="OperatingHour" positionX="1204" positionY="-843" width="128" height="163"/>
+        <element name="Product" positionX="1044" positionY="-610" width="128" height="240"/>
+        <element name="Purpose" positionX="702" positionY="-1044" width="128" height="118"/>
+        <element name="Responsibility" positionX="675" positionY="-1548" width="128" height="118"/>
+        <element name="Student" positionX="286" positionY="-1035" width="128" height="285"/>
+        <element name="StudentAsset" positionX="288" positionY="-619" width="128" height="165"/>
+        <element name="StudentCost" positionX="466" positionY="-693" width="128" height="195"/>
+        <element name="StudentDebt" positionX="81" positionY="-531" width="128" height="163"/>
+        <element name="StudentIncome" positionX="790" positionY="-639" width="164" height="195"/>
+        <element name="Value" positionX="45" positionY="-837" width="128" height="180"/>
+        <element name="ValueProposition" positionX="1042" positionY="-1278" width="128" height="208"/>
+        <element name="Vision" positionX="702" positionY="-891" width="128" height="103"/>
+    </elements>
+</model>

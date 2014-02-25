@@ -1,0 +1,87 @@
+/* 
+  Localizable.strings
+  CENTRO
+
+  Created by Centro Community Partners.
+  Copyright (c) 2013 Centro Community Partners. All rights reserved.
+*/
+
+/* SSProfileTabViewController */
+"ProfileNavBarTitle" = "Profile";
+"LogOutAlertViewTitle" = "Log Out";
+"LogOutAlertViewMessage" = "Are you sure you want to log out?";
+"LogOutAlertViewCancelButtonTitle" = "Cancel";
+"LogOutButtonTitle" = "Log Out";
+
+"EmailFeedbackSubject" = "Feedback from: %@";
+
+"MailComposerAlertViewTitle" = "Error";
+"MailComposerAlertViewMessage" = "Your device doesn't support the composer sheet";
+"MailComposerAlertViewCancelButtonTitle" = "OK";
+
+"HeaderStringProfile" = "    Profile";
+"HeaderStringAbout" = "    About";
+
+"TableViewCellTitleEditProfile" = "Edit Profile";
+"TableViewCellTitleLogOut" = "Log Out";
+"TableViewCellTitleAbout" = "About CENTRO";
+"TableViewCellTitleFeedback" = "Send Feedback";
+
+"LogInMissingInformationAlertViewTitle" = "Missing Information";
+"LogInMissingInformationAlertViewMessage" = "Make sure you fill out all of the information!";
+"LogInMissingInformationAlertViewCancelButtonTitle" = "OK";
+
+
+"SignUpMissingInformationAlertViewTitle" = "Missing Information";
+"SignUpMissingInformationAlertViewMessage" = "Make sure you fill out all of the information!";
+"SignUpMissingInformationAlertViewCancelButtonTitle" = "OK";
+
+
+"SignUpPasswordMismatchAlertViewTitle" = "Password Mismatch";
+"SignUpPasswordMismatchAlertViewMessage" = "Make sure password and password confirmation are the same!";
+"SignUpPasswordMismatchAlertViewCancelButtonTitle" = "OK";
+
+"SignUpShortPasswordAlertViewTitle" = "Password Too Short";
+"SignUpShortPasswordAlertViewMessage" = "Your password should be at least 8 characters long!";
+"SignUpShortPasswordAlertViewCancelButtonTitle" = "OK";
+
+/* SSViewProfileTableViewController */
+"ViewProfileNavBarTitle" = "Your Profile";
+
+/* SSEditProfileTableViewController */
+"EditProfileNavBarTitle" = "Edit Profile";
+"HUDLabelTextPushProfileData" = "Updating your profile...";
+
+/* SSLogInViewController */
+"ForgotPasswordAlertViewTitle" = "Enter e-mail";
+"ForgotPasswordAlertViewMessage" = "Please enter the e-mail address for your account.";
+"ForgotPasswordAlertViewCancelButtonTitle" = "OK";
+
+"HUDLabelTextLogIn" = "Logging you in...";
+"HUDLabelTextForgotPasswd" = "Requesting a password reset. Check your email.";
+
+/* SSLogInViewController */
+"HUDLabelTextSignUp" = "Signing you up...";
+
+/* SSUtils */
+"NetworkErrorAlertViewTitle" = "Connection Error";
+"LogInErrorAlertViewTitle" = "Log In Error";
+"SignUpErrorAlertViewTitle" = "Sign Up Error";
+"UnknownLogInSignUpErrorAlertViewTitle" = "Error";
+
+"NetworkErrorAlertViewMessage" = "Please check your internet connection and try again.";
+"LogInNoEmailErrorAlertViewMessage" = "Email does not exist.";
+"LogInOnlyStudentsErrorAlertViewMessage" = "Only students can log in.";
+"LogInInvalidPasswordErrorAlertViewMessage" = "Invalid password.";
+"SignUpEmailTakenErrorAlertViewMessage" = "The email is taken. Please try choosing another email.";
+"LogInNoConfirmErrorAlertViewMessage" = "You need to confirm your email before continue. Check your email to confirm it.";
+"UnknownLogInSignUpErrorAlertViewMessage" = "Please double-check your information and try again.";
+"LogInSignUpErrorAlertViewCancelButtonTitle" = "OK";
+
+/* SSUser */
+"HUDLabelTextLogOut" = "Logging you out...";
+
+/* SSServerData */
+"HUDLabelTextGatherServerData" = "Gathering all your data...";
+"HUDLabelTextSyncServerData" = "Syncing all your data...";
+"HUDLabelTextLogOutAndSyncServerData" = "Syncing and logging you out...";

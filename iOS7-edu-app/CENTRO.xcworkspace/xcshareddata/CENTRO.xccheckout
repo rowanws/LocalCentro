@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5E10CDA4-2A88-4C3F-ADE4-6D8958093AF3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CENTRO</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F323FEA0-5AC2-42BE-A048-091A04F12B30</key>
+		<string>https://github.com/rowanws/iOS7-edu-app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CENTRO.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F323FEA0-5AC2-42BE-A048-091A04F12B30</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rowanws/iOS7-edu-app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F323FEA0-5AC2-42BE-A048-091A04F12B30</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F323FEA0-5AC2-42BE-A048-091A04F12B30</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS7-edu-app</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Fj8-RN-fly">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Identify Personal Assets View Controller-->
+        <scene sceneID="u9t-RY-sgq">
+            <objects>
+                <viewController id="Fj8-RN-fly" customClass="SSIdentifyPersonalAssetsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hGE-kD-hFr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="Onz-S7-KiN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eCJ-pm-7Vz">
+                                <rect key="frame" x="20" y="33" width="280" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NvY-2b-zly">
+                                <rect key="frame" x="20" y="83" width="280" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fGs-jz-gwQ">
+                                <rect key="frame" x="20" y="183" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" red="0.0" green="0.074509806930000005" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="yesButtonPressed:" destination="Fj8-RN-fly" eventType="touchUpInside" id="2ZS-or-RwZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Xnc-DQ-z6a">
+                                <rect key="frame" x="170" y="183" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="No">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="noButtonPressed:" destination="Fj8-RN-fly" eventType="touchUpInside" id="sXF-qn-0yZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="assetTypeLabel" destination="NvY-2b-zly" id="j5e-A4-Elc"/>
+                        <outlet property="backgroundImageView" destination="Onz-S7-KiN" id="JqD-z9-dLY"/>
+                        <outlet property="noButton" destination="Xnc-DQ-z6a" id="5uv-aV-TcU"/>
+                        <outlet property="questionLabel" destination="eCJ-pm-7Vz" id="zV6-Rn-VEY"/>
+                        <outlet property="yesButton" destination="fGs-jz-gwQ" id="xwp-G5-zk1"/>
+                        <segue destination="RJG-Nh-FmP" kind="push" identifier="PersonalAssetAmounts" id="uii-GV-nYq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXk-va-Ocu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2539" y="3332"/>
+        </scene>
+        <!--Personal Assets Amounts View Controller-->
+        <scene sceneID="guX-BP-kF9">
+            <objects>
+                <viewController id="RJG-Nh-FmP" customClass="SSPersonalAssetsAmountsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xmk-kj-ELy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="kMM-54-294">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="612"/>
+                                <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KcD-og-9LM">
+                                <rect key="frame" x="20" y="27" width="280" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="C10-vm-hGo">
+                                <rect key="frame" x="95" y="92" width="130" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1xa-1M-i3z">
+                                <rect key="frame" x="20" y="155" width="280" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="42v-zC-EuE">
+                                <rect key="frame" x="60" y="259" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sureButtonPressed:" destination="RJG-Nh-FmP" eventType="touchUpInside" id="N0y-J6-6ma"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3sY-Pu-qvO">
+                                <rect key="frame" x="170" y="327" width="130" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="RJG-Nh-FmP" eventType="touchUpInside" id="chJ-5K-esN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ayG-7H-fNO">
+                                <rect key="frame" x="24" y="327" width="130" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="RJG-Nh-FmP" eventType="touchUpInside" id="Dch-FS-tj6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.5450980392" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="ZZi-1L-FV3"/>
+                    <connections>
+                        <outlet property="amountTextField" destination="C10-vm-hGo" id="nWa-9m-59D"/>
+                        <outlet property="backButton" destination="ayG-7H-fNO" id="uQT-wC-kKW"/>
+                        <outlet property="backgroundImageView" destination="kMM-54-294" id="11t-pF-dES"/>
+                        <outlet property="nextButton" destination="3sY-Pu-qvO" id="AhC-fE-h2B"/>
+                        <outlet property="noteLabel" destination="1xa-1M-i3z" id="BTP-hw-WaK"/>
+                        <outlet property="questionLabel" destination="KcD-og-9LM" id="wte-Ow-PMS"/>
+                        <outlet property="sureButton" destination="42v-zC-EuE" id="kIS-MJ-t10"/>
+                        <segue destination="3aq-MP-6Yc" kind="push" identifier="PersonalAssets" id="peK-No-psR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K1P-BC-ClI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3057" y="3332"/>
+        </scene>
+        <!--Personal Assets Table View Controller-->
+        <scene sceneID="TwJ-ei-m6c">
+            <objects>
+                <tableViewController id="3aq-MP-6Yc" customClass="SSPersonalAssetsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EDI-TZ-c7v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersonalAssets" textLabel="15f-lH-YCg" detailTextLabel="3Pr-Zv-66x" style="IBUITableViewCellStyleValue1" id="uRa-VV-cVt">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uRa-VV-cVt" id="sDc-1S-gFM">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="15f-lH-YCg">
+                                            <rect key="frame" x="15" y="11" width="34" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="3Pr-Zv-66x">
+                                            <rect key="frame" x="246" y="11" width="59" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3aq-MP-6Yc" id="89X-MC-ldW"/>
+                            <outlet property="delegate" destination="3aq-MP-6Yc" id="FGC-HV-7XX"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="wRj-e2-boS">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="kX6-cL-Jrl">
+                            <connections>
+                                <action selector="doneBarButtonPressed:" destination="3aq-MP-6Yc" id="F8M-04-AZd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="dQM-mJ-1dx" kind="push" identifier="EditPersonalAsset" id="0SR-pd-JNd"/>
+                        <segue destination="cd9-vm-L5S" kind="push" identifier="AddPersonalAsset" id="voY-wi-j3o"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UTF-19-lHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3556" y="3332"/>
+        </scene>
+        <!--Add Edit Personal Assets View Controller-->
+        <scene sceneID="m4h-Lw-7lE">
+            <objects>
+                <viewController id="dQM-mJ-1dx" customClass="SSAddEditPersonalAssetsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sl0-Sg-AWC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1cM-rh-4Qp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nZe-eR-Af2">
+                                <rect key="frame" x="20" y="20" width="280" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="RpM-8X-CW0">
+                                <rect key="frame" x="95" y="85" width="130" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UbF-em-TQ3">
+                                <rect key="frame" x="20" y="139" width="280" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OSg-2D-P34">
+                                <rect key="frame" x="60" y="360" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="isSureButtonPressed:" destination="dQM-mJ-1dx" eventType="touchUpInside" id="nHp-vP-G0P"/>
+                                    <action selector="sureButtonPressed:" destination="RJG-Nh-FmP" eventType="touchUpInside" id="pZF-jJ-6wS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="foA-XJ-UUg">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="HiO-Kz-pyJ">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="dQM-mJ-1dx" id="sow-xX-hLr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="1cM-rh-4Qp" id="PQ6-49-JdV"/>
+                        <outlet property="editAmountTextField" destination="RpM-8X-CW0" id="tHf-8i-Nvu"/>
+                        <outlet property="editIsSureButton" destination="OSg-2D-P34" id="BAm-y6-edW"/>
+                        <outlet property="editItemLabel" destination="nZe-eR-Af2" id="FQb-hz-bCK"/>
+                        <outlet property="editNoteLabel" destination="UbF-em-TQ3" id="92W-as-Fj1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jq4-ah-Hhv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4052" y="3093"/>
+        </scene>
+        <!--Add Personal Assets Table View Controller-->
+        <scene sceneID="q2O-9y-uZp">
+            <objects>
+                <tableViewController id="cd9-vm-L5S" customClass="SSAddPersonalAssetsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vyu-Ci-Hm2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddPersonalAssetCell" id="fZh-aj-n2F">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fZh-aj-n2F" id="Kp7-Ot-GnC">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cd9-vm-L5S" id="F0V-kL-b9h"/>
+                            <outlet property="delegate" destination="cd9-vm-L5S" id="Vms-7Y-Cea"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="jnP-p8-FKD"/>
+                    <connections>
+                        <segue destination="0Ft-3L-Zlu" kind="push" identifier="AddPersonalAssetDetail" id="8aD-SI-Zdd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFA-ZU-zXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4052" y="3661"/>
+        </scene>
+        <!--Add Edit Personal Assets View Controller-->
+        <scene sceneID="t5S-cC-GT7">
+            <objects>
+                <viewController id="0Ft-3L-Zlu" customClass="SSAddEditPersonalAssetsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HEY-S9-gDY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="y6H-4i-SOj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Jj-2W-4ir">
+                                <rect key="frame" x="20" y="20" width="280" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="wSa-W6-8fc">
+                                <rect key="frame" x="95" y="85" width="130" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9mu-Ha-lg5">
+                                <rect key="frame" x="20" y="139" width="280" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dwB-jJ-4tb">
+                                <rect key="frame" x="60" y="424" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="isSureButtonPressed:" destination="0Ft-3L-Zlu" eventType="touchUpInside" id="KpG-cS-xnD"/>
+                                    <action selector="sureButtonPressed:" destination="RJG-Nh-FmP" eventType="touchUpInside" id="5kY-Wq-UBw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="URJ-9o-GgW">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="nEn-cC-fbQ">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="0Ft-3L-Zlu" id="bpd-rG-G5I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="y6H-4i-SOj" id="Kjq-AZ-cVM"/>
+                        <outlet property="editAmountTextField" destination="wSa-W6-8fc" id="tYa-Yf-sZb"/>
+                        <outlet property="editIsSureButton" destination="dwB-jJ-4tb" id="hlN-65-mQE"/>
+                        <outlet property="editItemLabel" destination="8Jj-2W-4ir" id="2Ht-ij-0jg"/>
+                        <outlet property="editNoteLabel" destination="9mu-Ha-lg5" id="TRs-to-8Fv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zyi-Df-Eo8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4528" y="3332"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
